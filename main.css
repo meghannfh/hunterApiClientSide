@@ -165,6 +165,36 @@ ul li {
     height: 100%;
 }
 
+.documentationCode{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10;
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    height: 3rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+.documentation, .creator a{
+    text-decoration: none;
+    color: #00fa04;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-weight: 700;
+}
+
+.documentation:hover, .creator a:hover {
+    background-color: #00fa04;
+    color: rgb(42, 38, 38);
+    cursor: pointer;
+}
+
 /*SHOW & REMOVE PLACEHOLDER*/
 .hide {
     display: none;

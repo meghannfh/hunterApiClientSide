@@ -27,7 +27,7 @@ document.addEventListener('input', e => {
 async function apiRequest(){
     try{
         const hunterName = document.querySelector('input').value
-        const response = await fetch(`https://hunter-x-hunter-api.herokuapp.com/api/${hunterName}`)
+        const response = await fetch(`https://hunter-api-mongodb.herokuapp.com/api/${hunterName}`)
         const data = await response.json()
         console.log(data)
 
