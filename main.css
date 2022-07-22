@@ -29,6 +29,10 @@
     box-shadow: .5rem .5rem 0 #212121;
 }
 
+.apiExplanation{
+    height: 200px;
+}
+
 h1{
     margin-bottom: .7rem;
     font-weight: 900;
