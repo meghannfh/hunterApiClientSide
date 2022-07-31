@@ -1,6 +1,9 @@
 const button = document.querySelector('button')
 const input = document.querySelector('input')
 const placeHolder = document.querySelector('.hxhLogoPlaceholder')
+const apiURL = document.getElementById('apiURL')
+const toolTip = document.getElementById('myToolTip')
+const toolTipAndURL = document.getElementById('toolTipAndURL')
 
 button.addEventListener('click', apiRequest)
 
@@ -57,10 +60,15 @@ async function apiRequest(){
 
 // window.addEventListener("keydown", handle, true)
 //CSS ANIMATION ON PAGE LOAD
-window.addEventListener('load', ()=>{
-  document.querySelector('body').classList.add('loaded')
-})
 
 const removePlaceHolder = function() {
     placeHolder.classList.add('hide')
 }
+
+document.querySelector('.documentation').addEventListener('click', ()=>{
+  document.querySelector('.apiURL').classList.toggle('slideIn')
+})
+
+apiURL.addEventListener('click', ()=>{
+  toolTip.innerText = "copied!"
+})

@@ -21,16 +21,16 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-.apiExplanation, .hunterProfiles, .nenTypeInfo, .searchResults {
+.apiExplanation, .searchResults {
     padding: calc(4*.5rem);
     border: 3px solid #212121;
     border-radius: 4px;
-    margin: calc(4*.5rem) calc(4*.5rem);
+    margin: calc(2*.5rem) calc(2*.5rem);
     box-shadow: .5rem .5rem 0 #212121;
 }
 
-.apiExplanation{
-    height: 200px;
+.apiExplanation, .searchResults{
+    height: fit-content;
 }
 
 h1{
@@ -130,11 +130,12 @@ ul li {
 .infoPlaceContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
 
-.infoPlace{
-    padding: 1rem 0;
-}
+/* .infoPlaceContainer * {
+    border: 1px solid red;
+} */
 
 .infoHolder{
     /* font-size: 1.2rem; */
@@ -150,18 +151,21 @@ ul li {
 }
 
 .hunterImage {
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50px;
 }
 
 .hxhLogoPlaceholder{
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    background-color: white;
+    height: auto;
+    background-color: rgb(91, 218, 0);
 }
 
 .logoPlaceholder{
@@ -199,6 +203,56 @@ ul li {
     cursor: pointer;
 }
 
+.apiURL{
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    font-weight: 100;
+    transition: left .5s;
+    background-color: black;
+    padding: .7rem;
+    border-radius: 1rem;
+}
+
+/* .slideAway{
+
+}
+
+@keyframes slideAway{
+
+} */
+
+/*apiURL copy tooltip*/
+.tooltiptext {
+    width: 140px;
+    visibility: hidden;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -75px;
+    transition: opacity 0.3s;
+  }
+
+.apiURL:hover .tooltiptext{
+    cursor: pointer;
+    visibility: visible;
+}
+
+.slideIn{
+    left: 1%;
+}
+
+.hunterNameHere{
+    font-weight: 700;
+    letter-spacing: .1rem;
+    text-decoration: underline;
+}
+
 /*SHOW & REMOVE PLACEHOLDER*/
 .hide {
     display: none;
@@ -208,6 +262,10 @@ ul li {
     .topTwoContainer{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        max-width: 100vw;
     }
-
+    .apiExplanation, .searchResults{
+        width: 80%;
+    }
 }
