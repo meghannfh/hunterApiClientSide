@@ -4,6 +4,7 @@ const placeHolder = document.querySelector('.hxhLogoPlaceholder')
 const apiURL = document.getElementById('apiURL')
 const toolTip = document.getElementById('myToolTip')
 const toolTipAndURL = document.getElementById('toolTipAndURL')
+const docBtn = document.getElementById('docBtn')
 
 button.addEventListener('click', apiRequest)
 
@@ -65,10 +66,23 @@ const removePlaceHolder = function() {
     placeHolder.classList.add('hide')
 }
 
-document.querySelector('.documentation').addEventListener('click', ()=>{
+docBtn.addEventListener('click', ()=>{
   document.querySelector('.apiURL').classList.toggle('slideIn')
+  if(apiURL.classList.contains('slideIn')){
+    docBtn.innerText = "Hide"
+  } else {
+    docBtn.innerText = "using this API"
+  }
 })
 
 apiURL.addEventListener('click', ()=>{
-  toolTip.innerText = "copied!"
+  toolTip.innerText = "copied!";
+  var textToCopy = document.getElementById('apiURL').innerText.slice(0, 60);
+  console.log(textToCopy)
+  navigator.clipboard.writeText(textToCopy)
+
+})
+
+toolTipAndURL.addEventListener('mouseout', () => {
+  toolTip.innerText = 'click to copy API URL'
 })
