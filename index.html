@@ -9,20 +9,14 @@
     <title>Hunter x Hunter API</title>
 </head>
 <body>
+    <header>
+        <p>Read new Hunter x Hunter chapters every Monday (JST) / Sunday night (EST)</p>
+        <div>
+            <a href="https://www.viz.com/shonenjump/chapters/hunter-x-hunter?locale=en" target="_blank">Viz Manga</a>
+            <a href="https://twitter.com/Un4v5s8bgsVk9Xp" target="_blank">Togashi's Twitter</a>
+        </div>
+    </header>
     <section class="topTwoContainer">
-        <section class="apiExplanation">
-            <h1>Hunter Encyclopedia</h1>
-            <label class="input">
-            <input class="input__field" type="text" placeholder=" " />
-    
-            <span class="input__label">Enter Hunter Name</span>
-            </label>
-            
-            <div class="button-group">
-                <button>Find Hunter</button>
-            </div> 
-        </section>
-    
         <section class="searchResults">
             <div class="namePlace">
                 <h6 class="birthName"></h3>
@@ -50,8 +44,26 @@
             </div>
             <div class="hxhLogoPlaceholder">
                 <img class="logoPlaceholder" src="/media/placeholder.gif" alt="Hunter x Hunter logo">
+                <div class="first-search">
+                    <input class="input__field inpt" type="text" placeholder="type hunter name" id="main-input"/>
+                    <div class="first-button-group">
+                        <button class="btn">Find Hunter</button>
+                    </div>
+                </div>
             </div>
             
+        </section>
+
+        <section class="apiExplanation hide">
+            <h1>Hunter Encyclopedia</h1>
+            <label class="input">
+            <input class="input__field inpt" type="text" placeholder=" " id="second-input"/>
+    
+            <span class="input__label">Enter Hunter Name</span>
+            </label>
+            <div class="button-group">
+                <button class="btn">Find Hunter</button>
+            </div> 
         </section>
 
     </section>

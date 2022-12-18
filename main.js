@@ -1,19 +1,20 @@
-const button = document.querySelector('button')
-const input = document.querySelector('input')
+const buttons = document.querySelectorAll('.btn')
+const inputs = document.querySelectorAll('.inpt')
 const placeHolder = document.querySelector('.hxhLogoPlaceholder')
+const secondaryInput = document.querySelector('.apiExplanation')
 const apiURL = document.getElementById('apiURL')
 const toolTip = document.getElementById('myToolTip')
 const toolTipAndURL = document.getElementById('toolTipAndURL')
 const docBtn = document.getElementById('docBtn')
 
-button.addEventListener('click', apiRequest)
+buttons.forEach(button => button.addEventListener('click', apiRequest))
 
-input.addEventListener('keydown', e => {
-    if(e.code === 'Enter'){
-      apiRequest()
-      input.value = ''
-    }
-  })
+inputs.forEach(input => input.addEventListener('keydown', e => {
+  if(e.code === 'Enter'){
+    apiRequest()
+    input.value = ''
+  }
+}))
 
 let timer;
 
@@ -30,10 +31,14 @@ document.addEventListener('input', e => {
 
 async function apiRequest(){
     try{
-        const hunterName = document.querySelector('input').value
-        const response = await fetch(`https://web-production-91ba.up.railway.app/api/${hunterName}`)
+      let hunterName;
+      if(secondaryInput.classList.contains('hide')){
+        hunterName = document.getElementById('main-input').value
+      } else if(placeHolder.classList.contains('hide')){
+        hunterName = document.getElementById('second-input').value
+      }
+        const response = await fetch(`https://hunterxhunter-api.up.railway.app/api/${hunterName}`)
         const data = await response.json()
-        console.log(data)
 
         const namePlaceholder = document.querySelector('.birthName')
         const nenTypePlaceholder = document.querySelector('.nenType')
@@ -42,7 +47,6 @@ async function apiRequest(){
         const chZodiacHolder = document.querySelector('.chineseZodiac')
         const ageHolder = document.querySelector('.age')
         const birthPlaceHolder = document.querySelector('.birthPlace')
-        const hunterImageHolder = document.querySelector('.hunterImage')
 
         const hunterImg = document.getElementById('hunterImgContainer')
 
@@ -53,11 +57,9 @@ async function apiRequest(){
         chZodiacHolder.innerText = data.zodiac[1]
         ageHolder.innerText = data.age
         birthPlaceHolder.innerText = data.birthLocation
-        // hunterImageHolder.src = data.charImage
 
         //trying something
         hunterImg.style.backgroundImage = `url(${data.charImage})`;
-        console.log(hunterImg.style.backgroundImage)
 
         removePlaceHolder()
 
@@ -71,6 +73,9 @@ async function apiRequest(){
 
 const removePlaceHolder = function() {
     placeHolder.classList.add('hide')
+    secondaryInput.classList.remove('hide')
+    // hunterName = document.getElementById('second-input').value
+    // return hunterName
 }
 
 docBtn.addEventListener('click', ()=>{
