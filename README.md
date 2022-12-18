@@ -4,7 +4,7 @@ Data used for this project is hosted on MongoDB.
 
 Try it out [here!](https://the-hunter-api.netlify.app/)
 
-![alt text](http://url/to/img.png)
+![screenshot](media/screenshot.png)
 
 ## Purpose
 This project was primarily built to better understand the following:
