@@ -44,12 +44,12 @@
                     <h4 class="infoHolder">C. Zodiac</h4>
                     <p class="chineseZodiac"></p>
                 </div>
-                <div class="hunterImgContainer">
-                    <img src="#" class="hunterImage" alt="character image">
+                <div class="hunterImgContainer" id="hunterImgContainer">
+                    <!-- <img src="#" class="hunterImage" alt="character image"> -->
                 </div>
             </div>
             <div class="hxhLogoPlaceholder">
-                <img class="logoPlaceholder" src="/media/Hunter-X-Hunter-Logo.png" alt="Hunter x Hunter logo">
+                <img class="logoPlaceholder" src="/media/placeholder.gif" alt="Hunter x Hunter logo">
             </div>
             
         </section>
@@ -60,14 +60,20 @@
         <div class="docInfoContainer">
             <p class="documentation" id="docBtn">using this API</p>
             
-            <div id="toolTipAndURL">
-                <p class="apiURL" id="apiURL">https://hunter-api-mongodb.herokuapp.com/api/<span class="hunterNameHere">hunterNameHere</span><span class="tooltiptext" id="myToolTip">click to copy API URL</span>
+            <div class="toolTipAndUrl" id="toolTipAndURL">
+                <p class="apiURL" id="apiURL">https://web-production-91ba.up.railway.app/api/<span class="hunterNameHere">hunterNameHere</span><span class="tooltiptext" id="myToolTip">click to copy API URL</span>
                 </p>
             </div>
         
             <p class="creator">created by <a href="https://github.com/meghannfh">meghann hlibichuk</a>
             </p>
         </div>
+    </div>
+
+    <div class="allHuntersContainer">
+        <ul class="huntersList" id="huntersList">
+
+        </ul>
     </div>
     <script src="main.js"></script>
 </body>

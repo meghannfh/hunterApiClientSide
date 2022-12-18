@@ -31,7 +31,7 @@ document.addEventListener('input', e => {
 async function apiRequest(){
     try{
         const hunterName = document.querySelector('input').value
-        const response = await fetch(`https://hunter-api-mongodb.herokuapp.com/api/${hunterName}`)
+        const response = await fetch(`https://web-production-91ba.up.railway.app/api/${hunterName}`)
         const data = await response.json()
         console.log(data)
 
@@ -44,6 +44,8 @@ async function apiRequest(){
         const birthPlaceHolder = document.querySelector('.birthPlace')
         const hunterImageHolder = document.querySelector('.hunterImage')
 
+        const hunterImg = document.getElementById('hunterImgContainer')
+
         namePlaceholder.innerText = data.birthName
         nenTypePlaceholder.innerText = data.nenType
         birthDatePlaceholder.innerText = data.birthDate
@@ -51,7 +53,12 @@ async function apiRequest(){
         chZodiacHolder.innerText = data.zodiac[1]
         ageHolder.innerText = data.age
         birthPlaceHolder.innerText = data.birthLocation
-        hunterImageHolder.src = data.charImage
+        // hunterImageHolder.src = data.charImage
+
+        //trying something
+        hunterImg.style.backgroundImage = `url(${data.charImage})`;
+        console.log(hunterImg.style.backgroundImage)
+
         removePlaceHolder()
 
     }catch(error){
@@ -80,7 +87,7 @@ apiURL.addEventListener('click', ()=>{
   var textToCopy = document.getElementById('apiURL').innerText.slice(0, 60);
   console.log(textToCopy)
   navigator.clipboard.writeText(textToCopy)
-
+  console.log(document.querySelector('.docInfoContainer').offsetTop)
 })
 
 toolTipAndURL.addEventListener('mouseout', () => {
