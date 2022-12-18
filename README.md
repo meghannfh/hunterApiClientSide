@@ -2,7 +2,7 @@
 This project that displays character data from the popular manga and anime, Hunter x Hunter made using Vanilla JS, HTML and CSS.
 Data used for this project is hosted on MongoDB.
 
-Try it out [here!][https://the-hunter-api.netlify.app/]
+Try it out [here!](https://the-hunter-api.netlify.app/)
 
 ![alt text](http://url/to/img.png)
 
